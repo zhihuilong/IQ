@@ -1,0 +1,32 @@
+[
+    {
+        "base": "计算机基础"
+    },
+    {
+        "ios": "iOS"
+    },
+    {
+        "android": "Android"
+    },
+    {
+        "php": "php"
+    },
+    {
+        "java": "Java"
+    },
+    {
+        "cpp": "C++"
+    },
+    {
+        "js": "前端"
+    },
+    {
+        "algorithm": "算法"
+    },
+    {
+        "bigdata": "大数据"
+    },
+    {
+        "security": "安全"
+    }
+]
