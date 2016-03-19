@@ -8,31 +8,70 @@
 
 import UIKit
 
-let kScreenWidth  = UIScreen.mainScreen().bounds.size.width
-let kScreenHeight = UIScreen.mainScreen().bounds.size.height
+class HomeModel: NSObject {
+
+    var types: [NSDictionary] = []
+    
+    func fetchRemoteData(success success: ResultBlock, failure: ResultBlock) {
+        
+        HTTPManager.sharedInstance.request(URLString: IQURLString("types"),
+            success: { JSON in
+                if let JSON = JSON as? [NSDictionary] {
+                    self.types = JSON
+                    if let success = success {
+                        success()
+                    }
+                }
+            },
+            failure: {
+                if let failure = failure {
+                    failure()
+                }
+            }
+        )
+        
+    }
+    
+}
 
 class HomeController: UICollectionViewController, UICollectionViewDelegateFlowLayout {
     
-    let imageNames = ["计算机基础", "iOS", "Android", "php", "Java", "C++", "前端", "算法", "大数据", "安全"]
+    @IBOutlet weak var spinner: UIActivityIndicatorView!
+    let model = HomeModel()
 
     override func viewDidLoad() {
         super.viewDidLoad()
         let topLineView = UIView(frame: CGRect(x: 0, y: 44, width: kScreenWidth, height: 1))
         topLineView.backgroundColor = UIColor.whiteColor()
         self.navigationController?.navigationBar.addSubview(topLineView)
+        test()
+        spinner.startAnimating()
+        model.fetchRemoteData(
+            success: {
+                self.spinner.stopAnimating()
+                self.collectionView?.reloadData()
+            },
+            failure: {
+                self.spinner.stopAnimating()
+            }
+        )
     }
     
+    func test() {
+        print(IQURLString("types"))
+        
+    }
 }
 
 extension HomeController {
  
     override func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return imageNames.count
+        return model.types.count
     }
     
     override func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCellWithReuseIdentifier("HomeCell", forIndexPath: indexPath) as! HomeCell
-        cell.updateUI(imageNames[indexPath.row])
+        cell.updateUI(model.types[indexPath.row].allKeys[0] as! String)
         return cell
     }
     
@@ -43,7 +82,7 @@ extension HomeController {
     
     override func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
         let vc = UIStoryboard(name: "Main", bundle: NSBundle.mainBundle()).instantiateViewControllerWithIdentifier("QuestionList")
-        vc.title = imageNames[indexPath.row]
+        vc.title = model.types[indexPath.row].allKeys[0] as? String
         navigationController?.pushViewController(vc, animated: true)
     }
 }

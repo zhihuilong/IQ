@@ -15,7 +15,7 @@ class HomeCell: UICollectionViewCell {
     
     func updateUI(data: String) {
         self.backgroundColor = randomColor(hue: .Random, luminosity: .Light)
-        imageView.image = UIImage(named: data)
+        imageView.kf_setImageWithURL(NSURL(string: IQImageURLString(data))!)
         label.text = data;
     }
 }

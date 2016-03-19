@@ -10,7 +10,7 @@ import Foundation
 
 typealias ResultBlock      = (() -> Void)?
 typealias SuccessFileBlock = ((NSURL) -> Void)?
-typealias SuccessJSONBlock = ((NSDictionary) -> Void)?
+typealias SuccessJSONBlock = ((AnyObject) -> Void)?
 typealias FailureBlock     = ((NSError) -> Void)?
 
 class HTTPManager: NSObject {
@@ -26,12 +26,13 @@ class HTTPManager: NSObject {
             if let data = data {
                 do {
                     let JSON = try NSJSONSerialization.JSONObjectWithData(data, options: NSJSONReadingOptions.AllowFragments)
-                    if let JSON = JSON as? NSDictionary {
+                    
+                    if JSON.isKindOfClass(NSArray) || JSON.isKindOfClass(NSDictionary) {
                         if let success = success {
                             success(JSON)
                         }
                     } else {
-                        print("data cannot be transfered into JSON")
+                        print("data cannot be transfered into JSON, data is \(data)")
                     }
                 } catch let JSONError as NSError {
                     print ("JSONError: \(JSONError.localizedDescription)")
