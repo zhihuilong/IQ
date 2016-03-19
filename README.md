@@ -2,20 +2,10 @@
 
 An awesome App which can checkout the questions.
 
+## Features
 
-## Submit the questions you encountered.
+Submit the questions you encountered.
 
-Icon & Title:
-
-![图片名](https://raw.githubusercontent.com/longzhihui/XHTabBarController/master/ScreenShot/01.png)
-
-Icon without Title:
-
-![图片名](https://raw.githubusercontent.com/longzhihui/XHTabBarController/master/ScreenShot/02.png)
-
-Center Button:
-
-![图片名](https://raw.githubusercontent.com/longzhihui/XHTabBarController/master/ScreenShot/03.png)
 
 
 ## License
