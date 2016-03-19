@@ -33,15 +33,16 @@
                                     <rect key="frame" x="0.0" y="0.0" width="162" height="165"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="DhO-u4-bb6">
-                                            <rect key="frame" x="54.5" y="56" width="53" height="53"/>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="DhO-u4-bb6">
+                                            <rect key="frame" x="49" y="50.5" width="64" height="64"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" secondItem="DhO-u4-bb6" secondAttribute="height" multiplier="1:1" id="G92-o0-2mY"/>
+                                                <constraint firstAttribute="width" constant="64" id="K2w-sC-c99"/>
                                             </constraints>
                                         </imageView>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YoP-xx-1a2">
-                                            <rect key="frame" x="58" y="113" width="46.5" height="24"/>
-                                            <fontDescription key="fontDescription" type="system" weight="thin" pointSize="20"/>
+                                            <rect key="frame" x="58.5" y="118.5" width="46" height="18.5"/>
+                                            <fontDescription key="fontDescription" type="system" weight="thin" pointSize="19"/>
                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>

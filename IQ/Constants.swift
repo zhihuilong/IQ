@@ -22,5 +22,5 @@ func IQURLString(action: String) -> String{
 }
 
 func IQImageURLString(action: String) -> String{
-    return "https://raw.githubusercontent.com/litsunny/IQ/master/img/\(action).json"
+    return "https://raw.githubusercontent.com/litsunny/IQ/master/img/\(action).png"
 }

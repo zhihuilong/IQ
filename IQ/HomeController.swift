@@ -58,7 +58,7 @@ class HomeController: UICollectionViewController, UICollectionViewDelegateFlowLa
     }
     
     func test() {
-        print(IQURLString("types"))
+        
         
     }
 }
@@ -71,7 +71,7 @@ extension HomeController {
     
     override func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCellWithReuseIdentifier("HomeCell", forIndexPath: indexPath) as! HomeCell
-        cell.updateUI(model.types[indexPath.row].allKeys[0] as! String)
+        cell.updateUI(model.types[indexPath.row])
         return cell
     }
     
@@ -82,7 +82,7 @@ extension HomeController {
     
     override func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
         let vc = UIStoryboard(name: "Main", bundle: NSBundle.mainBundle()).instantiateViewControllerWithIdentifier("QuestionList")
-        vc.title = model.types[indexPath.row].allKeys[0] as? String
+        vc.title = model.types[indexPath.row].allValues[0] as? String
         navigationController?.pushViewController(vc, animated: true)
     }
 }

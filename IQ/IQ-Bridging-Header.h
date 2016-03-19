@@ -3,3 +3,4 @@
 //
 
 #import "UITableView+FDTemplateLayoutCell.h"
+#import "UIImageView+WebCache.h"
