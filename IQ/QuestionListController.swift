@@ -14,6 +14,8 @@ class QuestionListController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        tableView.rowHeight = UITableViewAutomaticDimension
+        tableView.estimatedRowHeight = 160.0
     }
     
     func fetchRemoteData(title: String) {
@@ -42,12 +44,13 @@ class QuestionListController: UITableViewController {
         return cell
     }
 
+    /*
     override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
         return tableView.fd_heightForCellWithIdentifier("Question", configuration: { (cell: AnyObject!) -> Void in
-            
+            cell.updateUI(self.questions[indexPath.row])
         })
     }
-    
+    */
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         print(indexPath)
     }
