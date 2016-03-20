@@ -6,14 +6,6 @@
 //  Copyright © 2016 Sunny. All rights reserved.
 //
 
-/*规定
-1. 文件名以.json结尾
-2. 字段为question、answer、tag
-
-
-
-*/
-
 let kScreenWidth  = UIScreen.mainScreen().bounds.size.width
 let kScreenHeight = UIScreen.mainScreen().bounds.size.height
 

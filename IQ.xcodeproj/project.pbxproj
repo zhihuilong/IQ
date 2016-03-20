@@ -276,14 +276,14 @@
 				A3B0B4A61C9D79040024BEEC /* HomeController.swift */,
 				A3B0B4D21C9D8A900024BEEC /* HomeCell.swift */,
 				A3B0B4A81C9D79040024BEEC /* Main.storyboard */,
-				A3B0B4AB1C9D79040024BEEC /* Assets.xcassets */,
-				A3B0B4AD1C9D79040024BEEC /* LaunchScreen.storyboard */,
 				A354BD621C9D99C8002AA0CC /* HTTPManager.swift */,
-				A3B0B4B01C9D79040024BEEC /* Info.plist */,
 				A3B0B4E01C9D92DC0024BEEC /* QuestionListController.swift */,
 				A354BD641C9D9BEA002AA0CC /* QuestionCell.swift */,
-				A354BD661C9DAA54002AA0CC /* IQ-Bridging-Header.h */,
 				A354BD771C9DAC59002AA0CC /* Constants.swift */,
+				A354BD661C9DAA54002AA0CC /* IQ-Bridging-Header.h */,
+				A3B0B4AB1C9D79040024BEEC /* Assets.xcassets */,
+				A3B0B4AD1C9D79040024BEEC /* LaunchScreen.storyboard */,
+				A3B0B4B01C9D79040024BEEC /* Info.plist */,
 			);
 			path = IQ;
 			sourceTree = "<group>";
