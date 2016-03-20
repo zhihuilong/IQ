@@ -21,7 +21,7 @@
                             <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                         </collectionViewFlowLayout>
                         <activityIndicatorView key="backgroundView" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="whiteLarge" id="Rc5-Lp-hJL">
-                            <rect key="frame" x="142" y="233" width="37" height="37"/>
+                            <rect key="frame" x="0.0" y="0.0" width="320" height="504"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <color key="color" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                         </activityIndicatorView>
@@ -34,14 +34,14 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="DhO-u4-bb6">
-                                            <rect key="frame" x="49" y="50.5" width="64" height="64"/>
+                                            <rect key="frame" x="53.5" y="55" width="55" height="55"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" secondItem="DhO-u4-bb6" secondAttribute="height" multiplier="1:1" id="G92-o0-2mY"/>
-                                                <constraint firstAttribute="width" constant="64" id="K2w-sC-c99"/>
+                                                <constraint firstAttribute="width" constant="55" id="K2w-sC-c99"/>
                                             </constraints>
                                         </imageView>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YoP-xx-1a2">
-                                            <rect key="frame" x="58.5" y="118.5" width="46" height="18.5"/>
+                                            <rect key="frame" x="58.5" y="114" width="46" height="23"/>
                                             <fontDescription key="fontDescription" type="system" weight="thin" pointSize="19"/>
                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>

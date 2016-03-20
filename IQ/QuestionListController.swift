@@ -10,26 +10,35 @@ import UIKit
 
 class QuestionListController: UITableViewController {
 
+    var questions: [NSDictionary] = []
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem()
+    }
+    
+    func fetchRemoteData(title: String) {
+        HTTPManager.sharedInstance.request(URLString: IQURLString(title),
+            success: { JSON in
+                if let JSON = JSON as? [NSDictionary] {
+                    print("JSON -- \(JSON)")
+                    self.questions = JSON
+                    self.tableView.reloadData()
+                }
+            },
+            failure: {
+            }
+        )
     }
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 10
+        return questions.count
     }
 
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         
         let cell = tableView.dequeueReusableCellWithIdentifier("Question", forIndexPath: indexPath) as! QuestionCell
-        
+        cell.updateUI(questions[indexPath.row])
         return cell
     }
 
@@ -43,6 +52,4 @@ class QuestionListController: UITableViewController {
         print(indexPath)
     }
     
-    
-
 }

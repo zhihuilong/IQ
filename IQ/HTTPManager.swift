@@ -32,14 +32,14 @@ class HTTPManager: NSObject {
                             success(JSON)
                         }
                     } else {
-                        print("data cannot be transfered into JSON, data is \(data)")
+                        print("data cannot be transfered into JSON, data is \(data)\nURL: \(URL)")
                     }
                 } catch let JSONError as NSError {
-                    print ("JSONError: \(JSONError.localizedDescription)")
+                    print ("JSONError: \(JSONError.localizedDescription)\nURL: \(URL)")
                 }
             } else {
                 if let failure = failure, error = error {
-                    print ("error: \(error.localizedDescription)")
+                    print ("error: \(error.localizedDescription)\nURL: \(URL)")
                     failure()
                 }
             }
@@ -65,7 +65,7 @@ class HTTPManager: NSObject {
                 }
             } else {
                 if let failure = failure, error = error {
-                    print ("error: \(error.localizedDescription)")
+                    print ("error: \(error.localizedDescription)\nURL: \(URL)")
                     failure()
                 }
             }

@@ -14,24 +14,32 @@ class HomeModel: NSObject {
     
     func fetchRemoteData(success success: ResultBlock, failure: ResultBlock) {
         
-        HTTPManager.sharedInstance.request(URLString: IQURLString("types"),
-            success: { JSON in
-                if let JSON = JSON as? [NSDictionary] {
-                    self.types = JSON
-                    if let success = success {
-                        success()
+        if let types = NSUserDefaults.standardUserDefaults().objectForKey(cachedTypesKey) as? [NSDictionary] {
+            print("cahce hit: \(types)")
+            self.types = types
+            if let success = success {
+                success()
+            }
+        } else {
+            HTTPManager.sharedInstance.request(URLString: IQURLString("types"),
+                success: { JSON in
+                    if let JSON = JSON as? [NSDictionary] {
+                        self.types = JSON
+                        NSUserDefaults.standardUserDefaults().setObject(self.types, forKey: cachedTypesKey)
+                        NSUserDefaults.standardUserDefaults().synchronize()
+                        if let success = success {
+                            success()
+                        }
+                    }
+                },
+                failure: {
+                    if let failure = failure {
+                        failure()
                     }
                 }
-            },
-            failure: {
-                if let failure = failure {
-                    failure()
-                }
-            }
-        )
-        
+            )
+        }
     }
-    
 }
 
 class HomeController: UICollectionViewController, UICollectionViewDelegateFlowLayout {
@@ -41,10 +49,11 @@ class HomeController: UICollectionViewController, UICollectionViewDelegateFlowLa
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        let topLineView = UIView(frame: CGRect(x: 0, y: 44, width: kScreenWidth, height: 1))
-        topLineView.backgroundColor = UIColor.whiteColor()
-        self.navigationController?.navigationBar.addSubview(topLineView)
+        
+        setupUI()
+        
         test()
+        
         spinner.startAnimating()
         model.fetchRemoteData(
             success: {
@@ -55,6 +64,28 @@ class HomeController: UICollectionViewController, UICollectionViewDelegateFlowLa
                 self.spinner.stopAnimating()
             }
         )
+    }
+    
+    private func setupUI() {
+        let topLineView = UIView(frame: CGRect(x: 0, y: 44, width: kScreenWidth, height: 1))
+        topLineView.backgroundColor = UIColor.whiteColor()
+        self.navigationController?.navigationBar.addSubview(topLineView)
+        
+        /*
+        let tableViewWrapper = PullToBounceWrapper(scrollView: collectionView!)
+        collectionView?.addSubview(tableViewWrapper)
+        
+        tableViewWrapper.didPullToRefresh = {
+            self.model.fetchRemoteData(
+                success: {
+                    tableViewWrapper.stopLoadingAnimation()
+                    self.collectionView?.reloadData()
+                },
+                failure: {
+                }
+            )
+        }
+        */
     }
     
     func test() {
@@ -81,8 +112,10 @@ extension HomeController {
     }
     
     override func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
-        let vc = UIStoryboard(name: "Main", bundle: NSBundle.mainBundle()).instantiateViewControllerWithIdentifier("QuestionList")
-        vc.title = model.types[indexPath.row].allValues[0] as? String
+        let vc = UIStoryboard(name: "Main", bundle: NSBundle.mainBundle()).instantiateViewControllerWithIdentifier("QuestionList") as! QuestionListController
+        let title = model.types[indexPath.row].allValues[0] as! String
+        vc.title = title
+        vc.fetchRemoteData(model.types[indexPath.row].allKeys[0] as! String)
         navigationController?.pushViewController(vc, animated: true)
     }
 }

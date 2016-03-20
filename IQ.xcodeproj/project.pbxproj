@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A3218FA61C9E6C4A0074024E /* BallView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3218F9F1C9E6C4A0074024E /* BallView.swift */; };
+		A3218FA71C9E6C4A0074024E /* BounceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3218FA01C9E6C4A0074024E /* BounceView.swift */; };
+		A3218FA81C9E6C4A0074024E /* CGRectEx.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3218FA21C9E6C4A0074024E /* CGRectEx.swift */; };
+		A3218FA91C9E6C4A0074024E /* NSTimerEx.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3218FA31C9E6C4A0074024E /* NSTimerEx.swift */; };
+		A3218FAA1C9E6C4A0074024E /* PullToBounceWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3218FA41C9E6C4A0074024E /* PullToBounceWrapper.swift */; };
+		A3218FAB1C9E6C4A0074024E /* WaveView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3218FA51C9E6C4A0074024E /* WaveView.swift */; };
 		A354BD631C9D99C8002AA0CC /* HTTPManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A354BD621C9D99C8002AA0CC /* HTTPManager.swift */; };
 		A354BD651C9D9BEA002AA0CC /* QuestionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A354BD641C9D9BEA002AA0CC /* QuestionCell.swift */; };
 		A354BD731C9DAA63002AA0CC /* UITableView+FDIndexPathHeightCache.m in Sources */ = {isa = PBXBuildFile; fileRef = A354BD6C1C9DAA63002AA0CC /* UITableView+FDIndexPathHeightCache.m */; };
@@ -64,6 +70,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		A3218F9F1C9E6C4A0074024E /* BallView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BallView.swift; sourceTree = "<group>"; };
+		A3218FA01C9E6C4A0074024E /* BounceView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BounceView.swift; sourceTree = "<group>"; };
+		A3218FA21C9E6C4A0074024E /* CGRectEx.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CGRectEx.swift; sourceTree = "<group>"; };
+		A3218FA31C9E6C4A0074024E /* NSTimerEx.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSTimerEx.swift; sourceTree = "<group>"; };
+		A3218FA41C9E6C4A0074024E /* PullToBounceWrapper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PullToBounceWrapper.swift; sourceTree = "<group>"; };
+		A3218FA51C9E6C4A0074024E /* WaveView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WaveView.swift; sourceTree = "<group>"; };
 		A354BD621C9D99C8002AA0CC /* HTTPManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTTPManager.swift; sourceTree = "<group>"; };
 		A354BD641C9D9BEA002AA0CC /* QuestionCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuestionCell.swift; sourceTree = "<group>"; };
 		A354BD661C9DAA54002AA0CC /* IQ-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "IQ-Bridging-Header.h"; sourceTree = "<group>"; };
@@ -157,6 +169,27 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		A3218F9E1C9E6C4A0074024E /* PullToBounce */ = {
+			isa = PBXGroup;
+			children = (
+				A3218F9F1C9E6C4A0074024E /* BallView.swift */,
+				A3218FA01C9E6C4A0074024E /* BounceView.swift */,
+				A3218FA11C9E6C4A0074024E /* helper */,
+				A3218FA41C9E6C4A0074024E /* PullToBounceWrapper.swift */,
+				A3218FA51C9E6C4A0074024E /* WaveView.swift */,
+			);
+			path = PullToBounce;
+			sourceTree = "<group>";
+		};
+		A3218FA11C9E6C4A0074024E /* helper */ = {
+			isa = PBXGroup;
+			children = (
+				A3218FA21C9E6C4A0074024E /* CGRectEx.swift */,
+				A3218FA31C9E6C4A0074024E /* NSTimerEx.swift */,
+			);
+			path = helper;
+			sourceTree = "<group>";
+		};
 		A354BD6A1C9DAA63002AA0CC /* FDTemplateLayoutCell */ = {
 			isa = PBXGroup;
 			children = (
@@ -235,6 +268,7 @@
 		A3B0B4A31C9D79040024BEEC /* IQ */ = {
 			isa = PBXGroup;
 			children = (
+				A3218F9E1C9E6C4A0074024E /* PullToBounce */,
 				A354BDC71C9DD0DB002AA0CC /* SDWebImage */,
 				A354BD6A1C9DAA63002AA0CC /* FDTemplateLayoutCell */,
 				A3B0B4D41C9D8EA20024BEEC /* RandomColor */,
@@ -419,12 +453,14 @@
 			files = (
 				A354BDF31C9DD0DB002AA0CC /* UIImage+GIF.m in Sources */,
 				A354BDF01C9DD0DB002AA0CC /* SDWebImageManager.m in Sources */,
+				A3218FA81C9E6C4A0074024E /* CGRectEx.swift in Sources */,
 				A354BDF71C9DD0DB002AA0CC /* UIImageView+WebCache.m in Sources */,
 				A354BDEF1C9DD0DB002AA0CC /* SDWebImageDownloaderOperation.m in Sources */,
 				A354BD741C9DAA63002AA0CC /* UITableView+FDKeyedHeightCache.m in Sources */,
 				A354BDEB1C9DD0DB002AA0CC /* SDImageCache.m in Sources */,
 				A354BDE91C9DD0DB002AA0CC /* MKAnnotationView+WebCache.m in Sources */,
 				A354BD761C9DAA63002AA0CC /* UITableView+FDTemplateLayoutCellDebug.m in Sources */,
+				A3218FAA1C9E6C4A0074024E /* PullToBounceWrapper.swift in Sources */,
 				A354BDF41C9DD0DB002AA0CC /* UIImage+MultiFormat.m in Sources */,
 				A354BD751C9DAA63002AA0CC /* UITableView+FDTemplateLayoutCell.m in Sources */,
 				A3B0B4DE1C9D8EA20024BEEC /* Luminosity.swift in Sources */,
@@ -433,8 +469,11 @@
 				A354BDF51C9DD0DB002AA0CC /* UIImage+WebP.m in Sources */,
 				A354BDF11C9DD0DB002AA0CC /* SDWebImagePrefetcher.m in Sources */,
 				A3B0B4DB1C9D8EA20024BEEC /* ColorDefinition.swift in Sources */,
+				A3218FAB1C9E6C4A0074024E /* WaveView.swift in Sources */,
 				A3B0B4A71C9D79040024BEEC /* HomeController.swift in Sources */,
+				A3218FA91C9E6C4A0074024E /* NSTimerEx.swift in Sources */,
 				A3B0B4D31C9D8A900024BEEC /* HomeCell.swift in Sources */,
+				A3218FA71C9E6C4A0074024E /* BounceView.swift in Sources */,
 				A354BDEC1C9DD0DB002AA0CC /* SDWebImageCompat.m in Sources */,
 				A354BDEA1C9DD0DB002AA0CC /* NSData+ImageContentType.m in Sources */,
 				A354BDED1C9DD0DB002AA0CC /* SDWebImageDecoder.m in Sources */,
@@ -448,6 +487,7 @@
 				A3B0B4E11C9D92DC0024BEEC /* QuestionListController.swift in Sources */,
 				A354BDEE1C9DD0DB002AA0CC /* SDWebImageDownloader.m in Sources */,
 				A354BD651C9D9BEA002AA0CC /* QuestionCell.swift in Sources */,
+				A3218FA61C9E6C4A0074024E /* BallView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -597,7 +637,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "IQ/IQ-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				TARGETED_DEVICE_FAMILY = 1;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
@@ -612,7 +652,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.litsunny.IQ;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "IQ/IQ-Bridging-Header.h";
-				TARGETED_DEVICE_FAMILY = 1;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};
