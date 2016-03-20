@@ -4,6 +4,9 @@ IQ is an awesome app owning various interview questions for jobseekers. The back
 
 ## Preview
 
+![图片名](https://raw.githubusercontent.com/litsunny/IQ/master/ScreenShot/01.png)
+
+![图片名](https://raw.githubusercontent.com/litsunny/IQ/master/ScreenShot/02.png)
 
 ## APIs
 
@@ -24,7 +27,7 @@ You can replace * with below
 
 ## Pull Request
 
-Just edit the JSON files according to the template below:
+Welcome to pull request. What you need do is just editing the JSON files according to the template below:
 
 ```
 [
