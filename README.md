@@ -4,7 +4,11 @@ IQ is an awesome app owning various interview questions for jobseekers. The back
 
 ## Preview
 
+Master
+
 ![图片名](https://raw.githubusercontent.com/litsunny/IQ/master/ScreenShot/01.png)
+
+Detail
 
 ![图片名](https://raw.githubusercontent.com/litsunny/IQ/master/ScreenShot/02.png)
 
