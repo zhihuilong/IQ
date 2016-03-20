@@ -22,7 +22,6 @@ class QuestionListController: UITableViewController {
         HTTPManager.sharedInstance.request(URLString: IQURLString(title),
             success: { JSON in
                 if let JSON = JSON as? [NSDictionary] {
-                    print("JSON -- \(JSON)")
                     self.questions = JSON
                     self.tableView.reloadData()
                 }
@@ -51,8 +50,10 @@ class QuestionListController: UITableViewController {
         })
     }
     */
+    
+    /*
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         print(indexPath)
     }
-    
+    */
 }

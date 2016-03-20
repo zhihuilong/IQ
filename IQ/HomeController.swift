@@ -12,33 +12,36 @@ class HomeModel: NSObject {
 
     var types: [NSDictionary] = []
     
-    func fetchRemoteData(success success: ResultBlock, failure: ResultBlock) {
+    func fetchData(success success: ResultBlock, failure: ResultBlock) {
         
         if let types = NSUserDefaults.standardUserDefaults().objectForKey(cachedTypesKey) as? [NSDictionary] {
             print("cahce hit: \(types)")
+            
             self.types = types
-            if let success = success {
-                success()
-            }
+            if let success = success { success() }
         } else {
-            HTTPManager.sharedInstance.request(URLString: IQURLString("types"),
-                success: { JSON in
-                    if let JSON = JSON as? [NSDictionary] {
-                        self.types = JSON
-                        NSUserDefaults.standardUserDefaults().setObject(self.types, forKey: cachedTypesKey)
-                        NSUserDefaults.standardUserDefaults().synchronize()
-                        if let success = success {
-                            success()
-                        }
-                    }
-                },
-                failure: {
-                    if let failure = failure {
-                        failure()
-                    }
-                }
-            )
+            fetchRemoteData(success: success, failure: failure)
         }
+    }
+    
+    func fetchRemoteData(success success: ResultBlock, failure: ResultBlock) {
+        HTTPManager.sharedInstance.request(URLString: IQURLString("types"),
+            success: { JSON in
+                if let JSON = JSON as? [NSDictionary] {
+                    //cache data
+                    NSUserDefaults.standardUserDefaults().setObject(JSON, forKey: cachedTypesKey)
+                    NSUserDefaults.standardUserDefaults().synchronize()
+                    
+                    self.types = JSON
+                    if let success = success { success() }
+                } else {
+                    if let failure = failure { failure() }
+                }
+            },
+            failure: {
+                if let failure = failure { failure() }
+            }
+        )
     }
 }
 
@@ -55,7 +58,7 @@ class HomeController: UICollectionViewController, UICollectionViewDelegateFlowLa
         test()
         
         spinner.startAnimating()
-        model.fetchRemoteData(
+        model.fetchData(
             success: {
                 self.spinner.stopAnimating()
                 self.collectionView?.reloadData()
@@ -64,6 +67,7 @@ class HomeController: UICollectionViewController, UICollectionViewDelegateFlowLa
                 self.spinner.stopAnimating()
             }
         )
+        model.fetchRemoteData(success: nil, failure: nil) //check update
     }
     
     private func setupUI() {

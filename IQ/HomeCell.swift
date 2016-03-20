@@ -17,7 +17,7 @@ class HomeCell: UICollectionViewCell {
         backgroundColor = randomColor(hue: .Random, luminosity: .Light)
         let imageURL = NSURL(string: IQImageURLString(dictionary.allKeys.first as! String))!
         
-        imageView.sd_setImageWithURL(imageURL, placeholderImage: UIImage(named: "bigdata")) //必须要设置一张站位图，不然坑的一笔
+        imageView.sd_setImageWithURL(imageURL, placeholderImage: UIImage(named: "default")) //必须要设置一张占位图，不然坑的一笔
         
         label.text = dictionary.allValues.first as? String;
     }
