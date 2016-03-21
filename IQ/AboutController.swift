@@ -27,11 +27,11 @@ extension AboutController: UIWebViewDelegate {
     }
     
     func webViewDidFinishLoad(webView: UIWebView) {
-        spinner.stopAnimating()
+        spinner.removeFromSuperview()
     }
     
     func webView(webView: UIWebView, didFailLoadWithError error: NSError?) {
-        spinner.stopAnimating()
+        spinner.removeFromSuperview()
     }
     
 }
