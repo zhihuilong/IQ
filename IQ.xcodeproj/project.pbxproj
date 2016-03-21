@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A32096761CA0062D0089E5F4 /* AboutController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A32096751CA0062D0089E5F4 /* AboutController.swift */; };
 		A3218FA61C9E6C4A0074024E /* BallView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3218F9F1C9E6C4A0074024E /* BallView.swift */; };
 		A3218FA71C9E6C4A0074024E /* BounceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3218FA01C9E6C4A0074024E /* BounceView.swift */; };
 		A3218FA81C9E6C4A0074024E /* CGRectEx.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3218FA21C9E6C4A0074024E /* CGRectEx.swift */; };
@@ -70,6 +71,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		A32096751CA0062D0089E5F4 /* AboutController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AboutController.swift; sourceTree = "<group>"; };
 		A3218F9F1C9E6C4A0074024E /* BallView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BallView.swift; sourceTree = "<group>"; };
 		A3218FA01C9E6C4A0074024E /* BounceView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BounceView.swift; sourceTree = "<group>"; };
 		A3218FA21C9E6C4A0074024E /* CGRectEx.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CGRectEx.swift; sourceTree = "<group>"; };
@@ -273,6 +275,7 @@
 				A354BD6A1C9DAA63002AA0CC /* FDTemplateLayoutCell */,
 				A3B0B4D41C9D8EA20024BEEC /* RandomColor */,
 				A3B0B4A41C9D79040024BEEC /* AppDelegate.swift */,
+				A32096751CA0062D0089E5F4 /* AboutController.swift */,
 				A3B0B4A61C9D79040024BEEC /* HomeController.swift */,
 				A3B0B4D21C9D8A900024BEEC /* HomeCell.swift */,
 				A3B0B4A81C9D79040024BEEC /* Main.storyboard */,
@@ -468,6 +471,7 @@
 				A3B0B4DC1C9D8EA20024BEEC /* Hue.swift in Sources */,
 				A354BDF51C9DD0DB002AA0CC /* UIImage+WebP.m in Sources */,
 				A354BDF11C9DD0DB002AA0CC /* SDWebImagePrefetcher.m in Sources */,
+				A32096761CA0062D0089E5F4 /* AboutController.swift in Sources */,
 				A3B0B4DB1C9D8EA20024BEEC /* ColorDefinition.swift in Sources */,
 				A3218FAB1C9E6C4A0074024E /* WaveView.swift in Sources */,
 				A3B0B4A71C9D79040024BEEC /* HomeController.swift in Sources */,

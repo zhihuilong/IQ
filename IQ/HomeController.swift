@@ -93,8 +93,7 @@ class HomeController: UICollectionViewController, UICollectionViewDelegateFlowLa
     }
     
     func test() {
-        
-        
+        print(navigationController?.navigationBar.items?.first?.rightBarButtonItem)
     }
 }
 

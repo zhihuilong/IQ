@@ -11,22 +11,31 @@ import UIKit
 class QuestionListController: UITableViewController {
 
     var questions: [NSDictionary] = []
+    var spinner = UIActivityIndicatorView(activityIndicatorStyle: .WhiteLarge)
     
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.rowHeight = UITableViewAutomaticDimension
         tableView.estimatedRowHeight = 160.0
+        spinner.color = UIColor.grayColor()
+        spinner.center = view.center
+        tableView.addSubview(spinner)
     }
     
     func fetchRemoteData(title: String) {
+        spinner.startAnimating()
         HTTPManager.sharedInstance.request(URLString: IQURLString(title),
             success: { JSON in
+                self.spinner.removeFromSuperview()
                 if let JSON = JSON as? [NSDictionary] {
                     self.questions = JSON
-                    self.tableView.reloadData()
+                    if self.questions.count > 0 {
+                        self.tableView.reloadData()
+                    }
                 }
             },
             failure: {
+                self.spinner.removeFromSuperview()
             }
         )
     }

@@ -38,6 +38,10 @@ Welcome to pull request. What you need do is just editing the JSON files accordi
     {
         "question": "1.question title",
         "answer": "your answers",
+        "referenceURL": [
+            "URL1",
+            "URL2"
+        ],
         "tag": [
             "tag1",
             "tag2"
@@ -46,6 +50,10 @@ Welcome to pull request. What you need do is just editing the JSON files accordi
     {
         "question": "2.question title",
         "answer": "your answers",
+        "referenceURL": [
+            "URL1",
+            "URL2"
+        ],
         "tag": [
             "tag1",
             "tag2"

@@ -11,6 +11,8 @@ let kScreenHeight = UIScreen.mainScreen().bounds.size.height
 
 let cachedTypesKey = "cachedTypesKey"
 
+let IQURLAbout = ""
+
 func IQURLString(action: String) -> String{
     return "https://raw.githubusercontent.com/litsunny/IQ/master/api/\(action).json"
 }

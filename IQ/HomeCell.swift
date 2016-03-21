@@ -19,6 +19,6 @@ class HomeCell: UICollectionViewCell {
         
         imageView.sd_setImageWithURL(imageURL, placeholderImage: UIImage(named: "default")) //必须要设置一张占位图，不然坑的一笔
         
-        label.text = dictionary.allValues.first as? String;
+        label.text = dictionary.allValues.first as? String
     }
 }
